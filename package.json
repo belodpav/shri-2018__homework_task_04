@@ -1,0 +1,23 @@
+{
+  "name": "github-viewer",
+  "version": "1.0.0",
+  "description": "github viewer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "github",
+    "git",
+    "cli",
+    "node",
+    "js",
+    "express"
+  ],
+  "author": "belodpav",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.19.0",
+    "eslint-config-google": "^0.9.1"
+  }
+}
