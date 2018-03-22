@@ -1,3 +1,4 @@
+const {DEFAULT_BRANCH} = require('../config');
 const express = require('express');
 const router = express.Router();
 // controllers
@@ -9,7 +10,7 @@ const blobController = require('../controllers/blob');
 
 
 router.get('/', function(req, res) {
-    res.redirect('/master');
+    res.redirect(`/${DEFAULT_BRANCH}`);
 });
 
 router.get('/commits/:co', commitsController);
