@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    link(rel="icon" href="/static/favicon.ico" type="image/x-icon")
+    link(rel='stylesheet', href='/static/index.min.css')
+  body.page.font.font_face_ss
+    header.header.page__header
+        a.logo(href="/", title="GitTub") GitTub
+        a(href="/branches/", title="Branches") Branches
+    ul
+        each branch in branches
+            li
+                a(href='/' + branch + '/')= branch
+    script(src="/static/index.min.js")
