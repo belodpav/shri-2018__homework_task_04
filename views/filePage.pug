@@ -1,13 +1,10 @@
 doctype html
 html
-  head
-    link(rel="icon" href="/static/favicon.ico" type="image/x-icon")
-    link(rel='stylesheet', href='/static/index.min.css')
+  include head
   body.page.font.font_face_ss
-    header.header.page__header
-        a.logo(href="/", title="GitTub") GitTub
-        a(href="/commits/" + branch, title="commits") Commits
-        a(href="/branches/", title="Branches") Branches
-    a(href= '/' + branch + parentUrl title="Назад") Назад
-    pre #{message}
-    script(src="/static/index.min.js")
+    include headerMain
+    section.page__content.content
+        div.content__inner
+            a(href= '/' + branch + parentUrl title="Назад") Назад
+            pre.code #{message}
+    include footer

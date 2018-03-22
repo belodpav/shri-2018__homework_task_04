@@ -1,21 +1,29 @@
 doctype html
 html
-  head
-    link(rel="icon" href="/static/favicon.ico" type="image/x-icon")
-    link(rel='stylesheet', href='/static/index.min.css')
+  include ./head.pug
   body.page.font.font_face_ss
-    header.header.page__header
-        a.logo(href="/", title="GitTub") GitTub
-        a(href="/commits/" + branch, title="commits") Commits
-        a(href="/branches/", title="Branches") Branches
-    ul
-        if parentUrl
-            li
-                a(href=parentUrl title="Назад") ..
-        each val in list
-            li
-                if val.type === 'tree'
-                    a(href=url + val.name title= val.name)= val.name
-                else
-                    a(href='/blob' + url + val.name title= val.name)= val.name
-    script(src="/static/index.min.js")
+    include headerMain
+    section.page__content.content
+        div.content__inner
+            ul.dir-list
+                if parentUrl
+                    li.dir-list__item
+                        a.dir-list__link(href=parentUrl title="Назад") ..
+                each val in list
+                    li.dir-list__item
+                        if val.type === 'tree'
+                            a.dir-list__link(
+                                href=url + val.name
+                                title= val.name
+                            )
+                                span.dir-list__item-icon
+                                    include icon_type_folder
+                                =val.name
+                        else
+                            a.dir-list__link(
+                                href='/blob' + url + val.name title= val.name
+                            )
+                                span.dir-list__item-icon
+                                    include icon_type_file
+                                =val.name
+    include footer

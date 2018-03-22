@@ -1,11 +1,9 @@
 doctype html
 html
-  head
-    link(rel="icon" href="/static/favicon.ico" type="image/x-icon")
-    link(rel='stylesheet', href='/static/index.min.css')
+  include head
   body.page.font.font_face_ss
-    header.header.page__header
-        a.logo(href="/", title="GitTub") GitTub
-        a(href="/branches/", title="Branches") Branches
-    h1 404. #{message}
-    script(src="/static/index.min.js")
+    include headerSimple
+    section.page__content.content
+        div.content__inner
+            h1 404. #{message}
+    include footer
