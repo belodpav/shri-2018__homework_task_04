@@ -1,4 +1,4 @@
-const {PORT, HOST} = require('./config/config');
+const {PORT, HOST} = require('./config');
 const express = require('express');
 const app = express();
 
@@ -6,10 +6,6 @@ const router = require('./routes/index');
 
 app.set('views', './views');
 app.set('view engine', 'pug');
-
-app.param(['id', 'co'], (req, res, next, id) => {
-    next();
-});
 
 app.use('/static', express.static('dist'));
 app.use(router);
