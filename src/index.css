@@ -1,3 +1,8 @@
 @import './components/header/header.css';
 @import './components/page/page.css';
 @import './components/font/font.css';
+@import './components/icon/icon.css';
+@import './components/dir-list/dir-list.css';
+@import './components/nav/nav.css';
+@import './components/content/content.css';
+@import './components/code/code.css';

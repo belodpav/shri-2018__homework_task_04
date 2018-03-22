@@ -1,3 +1,8 @@
 .page {
     margin: 0;
 }
+.page__content {
+    padding: 40px 15px;
+    margin: 0 auto;
+    max-width: 920px;
+}

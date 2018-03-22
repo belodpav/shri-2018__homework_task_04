@@ -1,0 +1,18 @@
+.icon {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.icon_type_folder {
+    width: 14px;
+    height: 16px;
+}
+
+.icon_theme_classic {
+    fill: #999;
+}
+
+.icon_theme_classic:hover {
+    fill: #555;
+}
