@@ -1,5 +1,5 @@
 const getBranches = require('../helpers/getBranches');
-const REPO_PATH = require('../config/config').PATH;
+const REPO_PATH = require('../config').PATH;
 const render = require('../helpers/render');
 
 module.exports = function(req, res) {
