@@ -1,7 +1,7 @@
 const util = require('util');
 const childProcess = require('child_process');
 const exec = util.promisify(childProcess.exec);
-const REPO_PATH = require('../config/config').PATH;
+const REPO_PATH = require('../config').PATH;
 
 /**
  * Возвращает Промис

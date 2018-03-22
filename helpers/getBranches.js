@@ -35,7 +35,7 @@ function getBranches(path) {
             reject();
         })
         .then((data) => {
-            let list = data.stdout.replace(/\(.{0,}\)/gi, '');
+            let list = data.stdout.replace(/\(.*\)/gi, '');
             list = list.replace('*', '').split('\n');
 
             return list.map(branchParser).filter(isBranch);
