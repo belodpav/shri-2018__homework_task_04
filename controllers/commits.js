@@ -7,7 +7,7 @@ module.exports = function(req, res) {
 
     getCommits(param, REPO_PATH)
     .catch(() => {
-        render('404', res, {message: 'Страница не найдена'});
+        render('page_type_404', res, {message: 'Страница не найдена'});
     })
     .then((commits) => {
         const data = {
@@ -15,6 +15,6 @@ module.exports = function(req, res) {
             curBranch: param
         };
 
-        render('commitsPage', res, data);
+        render('page_type_commits', res, data);
     });
 };

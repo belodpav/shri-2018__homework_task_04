@@ -4,7 +4,7 @@ const app = express();
 
 const router = require('./routes/index');
 
-app.set('views', './views');
+app.set('views', './src/components/page/_type');
 app.set('view engine', 'pug');
 
 app.use('/static', express.static('dist'));

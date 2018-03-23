@@ -7,13 +7,14 @@ module.exports = function(req, res) {
 
     getBranches(REPO_PATH)
     .catch(() => {
-        render('404', res, {message: 'Страница не найдена'});
+        render('page_type_404', res, {message: 'Страница не найдена'});
     })
     .then((branches) => {
         const data = {
             branches: branches,
             curBranch: param
         };
-        render('branchesPage', res, data);
+
+        render('page_type_branches', res, data);
     });
 };

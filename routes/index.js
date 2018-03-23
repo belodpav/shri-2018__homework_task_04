@@ -1,23 +1,20 @@
 const {DEFAULT_BRANCH} = require('../config');
 const express = require('express');
 const router = express.Router();
-// controllers
-const commitsController = require('../controllers/commits');
-const branchesController = require('../controllers/branches');
-const filesController = require('../controllers/files');
-const blobController = require('../controllers/blob');
+const render = require('../helpers/render');
+const controller = require('../controllers');
 
 router.get('/', (req, res) => {
     res.redirect(`/tree/${DEFAULT_BRANCH}`);
 });
 
-router.get('/commits/:co', commitsController);
-router.get('/branches/:co', branchesController);
-router.get('/blob/:id/*', blobController);
-router.get('/tree/:id*', filesController);
+router.get('/commits/:co', controller.commits);
+router.get('/branches/:co', controller.branches);
+router.get('/blob/:id/*', controller.blob);
+router.get('/tree/:id*', controller.files);
 
 router.get('*', (req, res) => {
-    res.send('404');
+    render('page_type_404', res, {message: 'Страница не найдена'});
 });
 
 module.exports = router;

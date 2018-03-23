@@ -1,8 +1,8 @@
 doctype html
 html
-  include head
+  include ../__head/page__head
   body.page.font.font_face_ss
-    include headerMain
+    include ../__header/page__header
     section.page__content.content
         div.content__inner
             ul.dir-list
@@ -11,4 +11,4 @@ html
                         a.dir-list__link(
                             href='/tree/' + commit.hash
                         )= commit.text
-    include footer
+    include ../__footer/page__footer

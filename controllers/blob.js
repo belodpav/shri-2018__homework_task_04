@@ -16,7 +16,7 @@ module.exports = function(req, res) {
 
     getBlob(param, url)
     .catch(() => {
-        render('404', res, {message: 'Файл не найден'});
+        render('page_type_404', res, {message: 'Файл не найден'});
     })
     .then((message) => {
         const data = {
@@ -25,7 +25,7 @@ module.exports = function(req, res) {
             curBranch: param
         };
 
-        render('filePage', res, data);
+        render('page_type_file', res, data);
     });
 };
 

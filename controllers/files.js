@@ -16,7 +16,7 @@ module.exports = function(req, res) {
 
     getDirList(param, url)
     .catch(() => {
-        render('404', res, {message: 'Страница не найдена'});
+        render('page_type_404', res, {message: 'Страница не найдена'});
     })
     .then((files) => {
         const data = {
@@ -26,7 +26,7 @@ module.exports = function(req, res) {
             curBranch: param
         };
 
-        render('listPage', res, data);
+        render('page_type_list', res, data);
     });
 };
 

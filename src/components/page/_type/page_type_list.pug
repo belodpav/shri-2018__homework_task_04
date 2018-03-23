@@ -1,8 +1,8 @@
 doctype html
 html
-  include ./head.pug
+  include ../__head/page__head
   body.page.font.font_face_ss
-    include headerMain
+    include ../__header/page__header
     section.page__content.content
         div.content__inner
             ul.dir-list
@@ -17,13 +17,13 @@ html
                                 title= val.name
                             )
                                 span.dir-list__item-icon
-                                    include icon_type_folder
+                                    include ../../icon/_type/icon_type_folder
                                 =val.name
                         else
                             a.dir-list__link(
                                 href='/blob/' + curBranch + '/' + url + val.name title= val.name
                             )
                                 span.dir-list__item-icon
-                                    include icon_type_file
+                                    include ../../icon/_type/icon_type_file
                                 =val.name
-    include footer
+    include ../__footer/page__footer
