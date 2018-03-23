@@ -14,7 +14,7 @@ router.get('/', function(req, res) {
 });
 
 router.get('/commits/:co', commitsController);
-router.get('/branches', branchesController);
+router.get('/branches/:co', branchesController);
 router.get('/blob/:id/*', blobController);
 router.get('/:id', treeController);
 
