@@ -26,7 +26,7 @@ module.exports = function(req, res) {
             parentUrl: parentUrl,
             url: relativeUrl,
             list: files,
-            branch: param
+            curBranch: param
         };
 
         render('listPage', res, data);

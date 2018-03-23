@@ -22,7 +22,7 @@ module.exports = function(req, res) {
         const data = {
             parentUrl: parentUrl,
             message: message,
-            branch: param
+            curBranch: param
         };
 
         render('filePage', res, data);

@@ -12,7 +12,7 @@ module.exports = function(req, res) {
     .then((commits) => {
         const data = {
             commits: commits,
-            branch: param
+            curBranch: param
         };
 
         render('commitsPage', res, data);
