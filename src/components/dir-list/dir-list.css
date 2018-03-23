@@ -16,6 +16,10 @@
     text-overflow: ellipsis;
     overflow: hidden;
 }
+.dir-list__link_type_cur-branch {
+    font-weight: 700;
+    color: #111;
+}
 
 .dir-list__item-icon {
     display: inline-block;
