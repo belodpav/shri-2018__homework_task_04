@@ -19,3 +19,18 @@
     color: #333;
     text-decoration: none;
 }
+.nav__cur-branch {
+    box-sizing: border-box;
+    padding: 5px 20px;
+    height: 42px;
+    background-color: #ddd;
+    border-radius: 4px;
+    border: 1px solid #aaa;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+}
+.nav__cur-branch:hover {
+    background-color: #bbb;
+}

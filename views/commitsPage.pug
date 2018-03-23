@@ -8,5 +8,7 @@ html
             ul.dir-list
                 each commit in commits
                     li.dir-list__item
-                        a.dir-list__link(href='/' + commit.hash + '/')= commit.text
+                        a.dir-list__link(
+                            href='/tree/' + commit.hash
+                        )= commit.text
     include footer
