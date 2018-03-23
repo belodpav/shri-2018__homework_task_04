@@ -8,12 +8,12 @@ html
             ul.dir-list
                 if parentUrl
                     li.dir-list__item
-                        a.dir-list__link(href=parentUrl title="Назад") ..
+                        a.dir-list__link(href='/tree' + parentUrl title="Назад") ..
                 each val in list
                     li.dir-list__item
                         if val.type === 'tree'
                             a.dir-list__link(
-                                href=url + val.name
+                                href='/tree/' + curBranch + '/' + url + val.name
                                 title= val.name
                             )
                                 span.dir-list__item-icon
@@ -21,7 +21,7 @@ html
                                 =val.name
                         else
                             a.dir-list__link(
-                                href='/blob' + url + val.name title= val.name
+                                href='/blob/' + curBranch + '/' + url + val.name title= val.name
                             )
                                 span.dir-list__item-icon
                                     include icon_type_file

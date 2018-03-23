@@ -2,27 +2,6 @@ const util = require('util');
 const childProcess = require('child_process');
 const exec = util.promisify(childProcess.exec);
 
-
-/**
- * Возвращает название ветки
- * на основе не обработанной входящей строки
- * @param {String} str
- * @return {String}
- */
-function branchParser(str) {
-    return str.trim();
-};
-
-/**
- * Возращает true, если входная строка
- * валидное название ветки/хэш коммита
- * @param {String} item
- * @return {Bool}
- */
-function isBranch(item) {
-    return item.length === 0 ? false : true;
-}
-
 /**
  * Возвращает Промис
  * @param {String} path
@@ -48,5 +27,26 @@ function getBranches(path) {
         });
     });
 }
+
+/**
+ * Возвращает название ветки
+ * на основе не обработанной входящей строки
+ * @param {String} str
+ * @return {String}
+ */
+function branchParser(str) {
+    return str.trim();
+};
+
+/**
+ * Возращает true, если входная строка
+ * валидное название ветки/хэш коммита
+ * @param {String} item
+ * @return {Bool}
+ */
+function isBranch(item) {
+    return item.length === 0 ? false : true;
+}
+
 
 module.exports = getBranches;

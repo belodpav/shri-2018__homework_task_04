@@ -5,6 +5,12 @@ header.header.page__header
                     li.nav__item
                         a.nav__logo(href="/", title="GitTub") BitHub
                     li.nav__item
-                        a.nav__link(href="/commits/" + curBranch, title="Commits") Commits
+                        a.nav__link(
+                            href="/commits/" + curBranch,
+                            title="Commits"
+                        ) Commits
                     li.nav__item
-                        a.nav__link(href="/branches/" + curBranch, title="Branches") Branches
+                        a.nav__cur-branch(
+                            href="/branches/" + curBranch,
+                            title="Выбрать ветку"
+                        )= curBranch

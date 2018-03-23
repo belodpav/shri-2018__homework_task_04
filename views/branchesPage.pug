@@ -10,12 +10,12 @@ html
                     li.dir-list__item
                         if branch === curBranch
                             a.dir-list__link.dir-list__link_type_cur-branch(
-                                href='/' + branch+ '/'
+                                href='/tree/' + branch+ '/'
                                 title='Текущая ветка'
                             )= branch
                         else
                             a.dir-list__link(
-                                href='/' + branch + '/'
+                                href='/tree/' + branch + '/'
                                 title='Перейти на ' + branch
                             )= branch
     include footer

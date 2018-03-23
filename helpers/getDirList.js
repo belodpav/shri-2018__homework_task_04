@@ -4,6 +4,31 @@ const exec = util.promisify(childProcess.exec);
 const REPO_PATH = require('../config').PATH;
 
 /**
+ * Вовращает промис, который резолвится
+ * в массив с именами файлов директрории
+ * @param {String} branch
+ * @param {String} path
+ * @return {Promise}
+ */
+function getDirList(branch, path) {
+    return new Promise((resolve, reject) => {
+        exec(`cd ${REPO_PATH} && git ls-tree ${branch}:${path}`)
+        .catch(() => {
+            reject();
+        })
+        .then((data) => {
+            const list = data.stdout.split('\n');
+            const files = list.filter(fileNameFilter).map(fileParser);
+
+            resolve(files);
+        })
+        .catch(() => {
+            reject(reject(Error('Cannot get folder structure')));
+        });
+    });
+}
+
+/**
  * Возвращает true если str
  * является валидным именем git сущности
  * @param {String} str
@@ -30,31 +55,5 @@ function fileParser(str) {
         name: name
     };
 }
-
-/**
- * Вовращает промис, который резолвится
- * в массив с именами файлов директрории
- * @param {String} branch
- * @param {String} path
- * @return {Promise}
- */
-function getDirList(branch, path) {
-    return new Promise((resolve, reject) => {
-        exec(`cd ${REPO_PATH} && git ls-tree ${branch}:${path}`)
-        .catch(() => {
-            reject();
-        })
-        .then((data) => {
-            const list = data.stdout.split('\n');
-            const files = list.filter(fileNameFilter).map(fileParser);
-
-            resolve(files);
-        })
-        .catch(() => {
-            reject(reject(Error('Cannot get folder structure')));
-        });
-    });
-}
-
 
 module.exports = getDirList;

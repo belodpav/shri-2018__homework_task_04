@@ -41,6 +41,8 @@
   },
   "dependencies": {
     "express": "^4.16.3",
-    "pug": "^2.0.2"
+    "hermione": "^0.65.2",
+    "pug": "^2.0.2",
+    "selenium-standalone": "^6.13.0"
   }
 }

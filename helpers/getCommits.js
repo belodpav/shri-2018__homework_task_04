@@ -3,21 +3,6 @@ const childProcess = require('child_process');
 const exec = util.promisify(childProcess.exec);
 
 /**
- * Возвращает объект с хэшом коммита
- * и его заголовком по строке вида:
- * 0d55a7f Для игнорирования линтером node_modules
- * @param {String} str
- * @return {Object}
- */
-function commitParser(str) {
-    const words = str.split(' ');
-    return {
-        hash: words[0],
-        text: words.slice(1, words.length).join(' ')
-    };
-};
-
-/**
  * Возвращает Промис
  * @param {String} branch
  * @param {String} path - путь до репозитория
@@ -43,5 +28,20 @@ function getCommits(branch, path) {
         });
     });
 }
+
+/**
+ * Возвращает объект с хэшом коммита
+ * и его заголовком по строке вида:
+ * 0d55a7f Для игнорирования линтером node_modules
+ * @param {String} str
+ * @return {Object}
+ */
+function commitParser(str) {
+    const words = str.split(' ');
+    return {
+        hash: words[0],
+        text: words.slice(1, words.length).join(' ')
+    };
+};
 
 module.exports = getCommits;
