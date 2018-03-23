@@ -5,7 +5,7 @@ const render = require('../helpers/render');
 module.exports = function(req, res) {
     const param = req.params.co;
 
-    getBranches(param, REPO_PATH)
+    getBranches(REPO_PATH)
     .catch(() => {
         render('404', res, {message: 'Страница не найдена'});
     })
