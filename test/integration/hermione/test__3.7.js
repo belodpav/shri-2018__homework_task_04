@@ -1,7 +1,8 @@
 const {assert} = require('chai');
 
-describe('3.2. Работа с деревом файлов в ветке по умолчанию', () => {
-    it('3.2.4. Отображается корректный список'
+describe('3.7. Работа с деревом файлов в'
+    + ' ветке отличной от ветки по умолчанию', () => {
+    it('3.7.1. - 3.7.4. Отображается корректный список'
         + ' файлов и папок в катологе types', function() {
         const filesDefault = [
             'size',
@@ -11,7 +12,10 @@ describe('3.2. Работа с деревом файлов в ветке по у
         let isPassed = true;
 
         return this.browser
-        .url('/tree/master/types')
+        .url('/')
+        .url('/branches/master')
+        .url('/tree/sizes')
+        .url('/tree/sizes/types')
         .getText('.dir-list__link')
         .then((files) => {
             filesDefault.forEach((file) => {
@@ -24,18 +28,20 @@ describe('3.2. Работа с деревом файлов в ветке по у
         });
     });
 
-    it('3.2.6. Отображается корректный список'
+    it('3.7.5. - 3.7.6 Отображается корректный список'
         + ' файлов и папок в корневом катологе', function() {
         const filesDefault = [
-            'image.txt',
             'types',
             'whiteBear.txt'
         ];
         let isPassed = true;
 
         return this.browser
-        .url('/tree/master/types')
-        .url('/tree/master')
+        .url('/')
+        .url('/branches/master')
+        .url('/tree/sizes')
+        .url('/tree/sizes/types')
+        .url('/tree/sizes')
         .getText('.dir-list__link')
         .then((files) => {
             filesDefault.forEach((file) => {

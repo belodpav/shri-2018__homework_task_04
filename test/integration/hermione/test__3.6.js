@@ -1,19 +1,20 @@
 const {assert} = require('chai');
 
-describe('Отображение ветки по умолчанию', () => {
-    it('3.1.2. Из списка всех веток'
-        + 'отображается ветка по умолчанию', function() {
+describe('3.6. Отображение ветки отличной'
+    + ' от ветки по умолчанию', () => {
+    it('3.6.1. - 3.6.3 Отображается выбранная ветка', function() {
         return this.browser
         .url('/')
+        .url('/branches/master')
+        .url('/tree/sizes')
         .getText('.nav__cur-branch')
         .then((text) => {
-            assert.equal(text, 'master');
+            assert.equal(text, 'sizes');
         });
     });
 
-    it('3.1.3. Для ветки отображается список коммитов', function() {
+    it('3.6.4. Для ветки отображается список коммитов', function() {
         const commitsDefault = [
-            'Пятый коммит',
             'Четвертый комит',
             'Третий комит',
             'Второй коммит.',
@@ -22,7 +23,10 @@ describe('Отображение ветки по умолчанию', () => {
         let isPassed = true;
 
         return this.browser
-        .url('/commits/master')
+        .url('/')
+        .url('/branches/master')
+        .url('/tree/sizes')
+        .url('/commits/sizes')
         .getText('.dir-list__link')
         .then((commits) => {
             commits.forEach((commit) => {
@@ -35,10 +39,9 @@ describe('Отображение ветки по умолчанию', () => {
         });
     });
 
-    it('3.1.4. Для ветки отображается'
+    it('3.6.5. Для ветки отображается'
         + ' корректный список файлов и папок', function() {
         const filesDefault = [
-            'image.txt',
             'types',
             'whiteBear.txt'
         ];
@@ -46,6 +49,8 @@ describe('Отображение ветки по умолчанию', () => {
 
         return this.browser
         .url('/')
+        .url('/branches/master')
+        .url('/tree/sizes')
         .getText('.dir-list__link')
         .then((files) => {
             files.forEach((file) => {
