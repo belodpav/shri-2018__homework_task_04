@@ -4,7 +4,8 @@ const exec = util.promisify(childProcess.exec);
 const REPO_PATH = require('../config').PATH;
 
 /**
- * Возвращает Промис
+ * Возвращает Промис, при resolve которого
+ * возвращается содержимое файла
  * @param {String} branch
  * @param {String} path - путь до репозитория
  * @return {Promise}
@@ -21,7 +22,7 @@ function getBlob(branch, path) {
             resolve(text);
         })
         .catch(() => {
-            reject(reject(Error('Cannot get file')));
+            reject(Error('Cannot get file'));
         });
     });
 }
