@@ -11,4 +11,6 @@ deploy:
   provider: heroku
   api_key:
     secure: eTzpfWhhQeMkzfwi7qBrqOL0koXp4yRrfszxLcGldzS8NrjfWf0TPJpGe5bVtzSwFtjYd9PRkaHQY8yPsZ35m/IQv8XcrOuT6XaU/VNh6t4M4lH+YxvWbvoGJIEXddkjr8KYv7jpHpNt2tOVI7MyojKqhbiBiAnTZrIcue55ER0CusiUR7Ml3TTovCmwaGSKbUQAbZooGPjIGobPAYGCxLoqnp26JKe83NiyL0DcORFN7R+Uqj0HIAoloWvdgBQ/meNxz8bQWusCcNKZkxkmS5bXUJ2N2dBgqHWa+74KjFdh5kbi5Gf3cI27IHdIkROa0XBFsUTPno12EraYXmGvvjqmvUPHC8/1F0BawiakEH2jIkGO8kl/g0lzcrtiiHhX66OOX4I+usPtyfFOshT0xQmiokM5S2cXrBmDsmt4WhmTQUZyQjp75LKFxENhTAEdK7FRnJsFI6WOd61cxh/78lbqxPU36UuUEezAeOs9PoMzCd85qArXp6o2jDFak5IVqnh510fUni8/Xi14FuZ7NJtz36o8+q/8WSI1nkMGiy0ju4zxOGJ0kvyNYpGqnSnAJRVjwTLtpa4/5PoN7vjJC/OXjPaK2SrNe8ywppqypsLA4frxmhRWVoeb0H0nUM/cwyD0eJg0H9HntM2MfThz800sRGTIAZM/HyT8JLLwfnk=
-  app: shri-2018-04-prod
+  app:
+    master: shri-2018-04-prod
+    dev: shri-2018-04-dev
