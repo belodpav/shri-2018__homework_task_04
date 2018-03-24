@@ -11,7 +11,7 @@
     "webpack:dev": "webpack --config webpack.dev.js",
     "webpack:prod": "webpack --config webpack.prod.js",
     "dev": "npm run clear && npm run webpack:dev & npm run server",
-    "build": "npm run clear && npm run webpack:prod && node app.js"
+    "build": "npm run clear && npm run webpack:prod"
   },
   "keywords": [
     "github",

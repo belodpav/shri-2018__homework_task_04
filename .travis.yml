@@ -4,4 +4,4 @@ node_js:
  - 'node'
  - 8
 script:
- - npm run build
+ - npm run lint
