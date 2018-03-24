@@ -4,8 +4,6 @@
   "description": "github viewer",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && REPO=test-repo node app.js",
-    "git:clone": "git clone --mirror https://github.com/belodpav/shri-2018__test-repo.git test-repo/.git",
     "lint": "eslint .",
     "test": "mocha test/*",
     "clear": "rimraf dist",
