@@ -9,4 +9,4 @@ RUN git clone --mirror https://github.com/belodpav/shri-2018__test-repo.git test
 ENV REPO /usr/src/app/test-repo
 RUN npm install --only=production
 
-CMD npm run build
+CMD npm run dock:prod
