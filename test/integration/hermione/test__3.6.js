@@ -1,3 +1,4 @@
+/* eslint no-invalid-this: "off" */
 const {assert} = require('chai');
 
 describe('3.6. Отображение ветки отличной'

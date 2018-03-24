@@ -1,3 +1,4 @@
+/* eslint no-invalid-this: "off" */
 const {assert} = require('chai');
 
 describe('3.4. Работа с деревом файлов для'
@@ -16,7 +17,6 @@ describe('3.4. Работа с деревом файлов для'
 
     it('3.4.3.  D корне дерева файлов коммита'
         + 'отображается корректный список файлов и папок', function() {
-
         let isPassed = true;
 
         return this.browser

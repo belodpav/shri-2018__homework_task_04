@@ -1,3 +1,4 @@
+/* eslint no-invalid-this: "off" */
 const {assert} = require('chai');
 
 describe('3.7. Работа с деревом файлов в'
@@ -53,6 +54,5 @@ describe('3.7. Работа с деревом файлов в'
             assert.isTrue(isPassed);
         });
     });
-
 });
 

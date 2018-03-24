@@ -1,3 +1,4 @@
+/* eslint no-invalid-this: "off" */
 const {assert} = require('chai');
 
 describe('3.5. Отображение содержимого файла'
@@ -42,6 +43,5 @@ describe('3.5. Отображение содержимого файла'
             assert.isTrue(isPassed);
         });
     });
-
 });
 
