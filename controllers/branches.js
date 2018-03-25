@@ -1,4 +1,4 @@
-const getBranches = require('../helpers/getBranches');
+const {getBranches} = require('../helpers/getBranches');
 const REPO_PATH = require('../config').PATH;
 const render = require('../helpers/render');
 

@@ -27,4 +27,4 @@ function getBlob(branch, path) {
     });
 }
 
-module.exports = getBlob;
+module.exports = {getBlob};

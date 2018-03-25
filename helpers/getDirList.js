@@ -23,7 +23,7 @@ function getDirList(branch, path) {
             resolve(files);
         })
         .catch(() => {
-            reject(reject(Error('Cannot get folder structure')));
+            reject(Error('Cannot get folder structure'));
         });
     });
 }
@@ -56,4 +56,4 @@ function fileParser(str) {
     };
 }
 
-module.exports = getDirList;
+module.exports = {getDirList, fileParser};

@@ -1,4 +1,4 @@
-const getDirList = require('../helpers/getDirList');
+const {getDirList} = require('../helpers/getDirList');
 const render = require('../helpers/render');
 
 module.exports = function(req, res) {
