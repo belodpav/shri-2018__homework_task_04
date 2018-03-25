@@ -50,4 +50,4 @@ function isBranch(item) {
 }
 
 
-module.exports = getBranches;
+module.exports = {getBranches, branchParser};
