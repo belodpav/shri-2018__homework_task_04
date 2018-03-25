@@ -1,4 +1,4 @@
-const getCommits = require('../helpers/getCommits');
+const {getCommits} = require('../helpers/getCommits');
 const REPO_PATH = require('../config').PATH;
 const render = require('../helpers/render');
 

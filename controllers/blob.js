@@ -1,4 +1,4 @@
-const getBlob = require('../helpers/getBlob');
+const {getBlob} = require('../helpers/getBlob');
 const render = require('../helpers/render');
 
 module.exports = function(req, res) {
