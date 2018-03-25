@@ -3,7 +3,8 @@ const childProcess = require('child_process');
 const exec = util.promisify(childProcess.exec);
 
 /**
- * Возвращает Промис
+ * Возвращает Промис, при resolve которого
+ * возвращается список веток
  * @param {String} path
  * @return {Promise}
  */
