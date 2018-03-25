@@ -3,7 +3,8 @@ const childProcess = require('child_process');
 const exec = util.promisify(childProcess.exec);
 
 /**
- * Возвращает Промис
+ * Возвращает Промис, при resolve которого
+ * возвращается список коммитов для ветки
  * @param {String} branch
  * @param {String} path - путь до репозитория
  * @return {Promise}
