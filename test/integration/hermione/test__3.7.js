@@ -10,22 +10,15 @@ describe('3.7. Работа с деревом файлов в'
             'type.css',
             'type.html'
         ];
-        let isPassed = true;
 
         return this.browser
         .url('/')
-        .url('/branches/master')
-        .url('/tree/sizes')
-        .url('/tree/sizes/types')
+        .click('=master')
+        .click('=sizes')
+        .click('=types')
         .getText('.dir-list__link')
         .then((files) => {
-            filesDefault.forEach((file) => {
-                if (files.indexOf(file) === -1) {
-                    isPassed = false;
-                }
-            });
-
-            assert.isTrue(isPassed);
+            assert.includeMembers(files, filesDefault);
         });
     });
 
@@ -35,23 +28,13 @@ describe('3.7. Работа с деревом файлов в'
             'types',
             'whiteBear.txt'
         ];
-        let isPassed = true;
 
         return this.browser
-        .url('/')
-        .url('/branches/master')
-        .url('/tree/sizes')
         .url('/tree/sizes/types')
-        .url('/tree/sizes')
+        .click('=..')
         .getText('.dir-list__link')
         .then((files) => {
-            filesDefault.forEach((file) => {
-                if (files.indexOf(file) === -1) {
-                    isPassed = false;
-                }
-            });
-
-            assert.isTrue(isPassed);
+            assert.includeMembers(files, filesDefault);
         });
     });
 });

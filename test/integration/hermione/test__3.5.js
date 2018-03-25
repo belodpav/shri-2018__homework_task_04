@@ -6,10 +6,10 @@ describe('3.5. Отображение содержимого файла'
     it('3.5.1. - 3.5.5 Cодержимое файла отображается', function() {
         return this.browser
         .url('/')
-        .url('/commits/master')
-        .url('/tree/ae9152a')
-        .url('/tree/ae9152a/types')
-        .url('/blob/ae9152a/types/type.css')
+        .click('=Commits')
+        .click('=Третий комит')
+        .click('=types')
+        .click('=type.css')
         .getText('.code')
         .then((text) => {
             assert.isNotEmpty(text);
@@ -23,24 +23,13 @@ describe('3.5. Отображение содержимого файла'
             'type.css',
             'type.html'
         ];
-        let isPassed = true;
 
         return this.browser
-        .url('/')
-        .url('/commits/master')
-        .url('/tree/ae9152a')
-        .url('/tree/ae9152a/types')
         .url('/blob/ae9152a/types/type.css')
-        .url('/tree/ae9152a/types')
+        .click('=Назад')
         .getText('.dir-list__link')
         .then((files) => {
-            filesDefault.forEach((file) => {
-                if (files.indexOf(file) === -1) {
-                    isPassed = false;
-                }
-            });
-
-            assert.isTrue(isPassed);
+            assert.includeMembers(files, filesDefault);
         });
     });
 });

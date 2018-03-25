@@ -6,8 +6,8 @@ describe('3.6. Отображение ветки отличной'
     it('3.6.1. - 3.6.3 Отображается выбранная ветка', function() {
         return this.browser
         .url('/')
-        .url('/branches/master')
-        .url('/tree/sizes')
+        .click('=master')
+        .click('=sizes')
         .getText('.nav__cur-branch')
         .then((text) => {
             assert.equal(text, 'sizes');
@@ -21,22 +21,13 @@ describe('3.6. Отображение ветки отличной'
             'Второй коммит.',
             'Первый коммит'
         ];
-        let isPassed = true;
 
         return this.browser
-        .url('/')
-        .url('/branches/master')
         .url('/tree/sizes')
-        .url('/commits/sizes')
+        .click('=Commits')
         .getText('.dir-list__link')
         .then((commits) => {
-            commits.forEach((commit) => {
-                if (commitsDefault.indexOf(commit) === -1) {
-                    isPassed = false;
-                }
-            });
-
-            assert.isTrue(isPassed);
+            assert.includeMembers(commits, commitsDefault);
         });
     });
 
@@ -46,21 +37,12 @@ describe('3.6. Отображение ветки отличной'
             'types',
             'whiteBear.txt'
         ];
-        let isPassed = true;
 
         return this.browser
-        .url('/')
-        .url('/branches/master')
         .url('/tree/sizes')
         .getText('.dir-list__link')
         .then((files) => {
-            files.forEach((file) => {
-                if (filesDefault.indexOf(file) === -1) {
-                    isPassed = false;
-                }
-            });
-
-            assert.isTrue(isPassed);
+            assert.includeMembers(files, filesDefault);
         });
     });
 });

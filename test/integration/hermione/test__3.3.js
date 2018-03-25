@@ -5,8 +5,8 @@ describe('3.3. Отображение содержимого файла в ве�
     it('3.3.4. содержимое файла отображается', function() {
         return this.browser
         .url('/')
-        .url('/tree/master/types')
-        .url('/blob/master/types/type.css')
+        .click('=types')
+        .click('=type.css')
         .getText('.code')
         .then((text) => {
             assert.isNotEmpty(text);
@@ -20,22 +20,13 @@ describe('3.3. Отображение содержимого файла в ве�
             'type.css',
             'type.html'
         ];
-        let isPassed = true;
 
         return this.browser
-        .url('/')
-        .url('/tree/master/types')
         .url('/blob/master/types/type.css')
-        .url('/tree/master/types')
+        .click('=Назад')
         .getText('.dir-list__link')
         .then((files) => {
-            filesDefault.forEach((file) => {
-                if (files.indexOf(file) === -1) {
-                    isPassed = false;
-                }
-            });
-
-            assert.isTrue(isPassed);
+            assert.includeMembers(files, filesDefault);
         });
     });
 });
