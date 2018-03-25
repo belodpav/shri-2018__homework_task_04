@@ -9,6 +9,7 @@
     "int-test": "hermione",
     "clear": "rimraf dist",
     "server": "nodemon app.js",
+    "clone:test-repo": "git clone --mirror https://github.com/belodpav/shri-2018__test-repo.git test-repo/.git",
     "webpack:dev": "webpack --config webpack.dev.js",
     "webpack:prod": "webpack --config webpack.prod.js",
     "dev": "npm run clear && npm run webpack:dev & npm run server",
