@@ -56,4 +56,4 @@ function fileParser(str) {
     };
 }
 
-module.exports = getDirList;
+module.exports = {getDirList, fileParser};

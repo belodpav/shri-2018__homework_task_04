@@ -45,4 +45,4 @@ function commitParser(str) {
     };
 };
 
-module.exports = getCommits;
+module.exports = {getCommits, commitParser};
