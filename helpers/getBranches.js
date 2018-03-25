@@ -23,7 +23,7 @@ function getBranches(path) {
             resolve(branches);
         })
         .catch(() => {
-            reject(reject(Error('Cannot get branches')));
+            reject(Error('Cannot get branches'));
         });
     });
 }

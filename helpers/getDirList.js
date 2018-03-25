@@ -23,7 +23,7 @@ function getDirList(branch, path) {
             resolve(files);
         })
         .catch(() => {
-            reject(reject(Error('Cannot get folder structure')));
+            reject(Error('Cannot get folder structure'));
         });
     });
 }
