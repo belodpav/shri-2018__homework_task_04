@@ -6,6 +6,7 @@
   "scripts": {
     "lint": "eslint .",
     "test": "mocha test/*",
+    "int-test": "hermione",
     "clear": "rimraf dist",
     "server": "nodemon app.js",
     "webpack:dev": "webpack --config webpack.dev.js",
