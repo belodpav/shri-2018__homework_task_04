@@ -2,7 +2,7 @@
 
 ## Live версия
 
-[prodaction version](https://shri-2018-04.herokuapp.com/)
+[production version](https://shri-2018-04.herokuapp.com/)
 - привязана к ветке master
 
 [stagin version](https://shri-2018-04-dev.herokuapp.com/)
@@ -18,9 +18,23 @@
 
 `npm run lint`
 
+**Тесты:**
+
 Запуск модульных тестов:
 
 `npm run test`
+
+Для работы интеграционных тестов необходимо загрузить тестовый
+репозиторий командой:
+
+`npm run clone:test-repo`
+После чего можно запустить тесты:
+
+Запуск интеграционных тестов:
+
+`npm run int-test`
+
+**Тесты-END**
 
 Запуск сервера:
 
